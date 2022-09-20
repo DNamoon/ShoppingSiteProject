@@ -1,7 +1,10 @@
 package com.example.boardproject.controller;
 
+import com.example.boardproject.dto.BoardDTO;
 import com.example.boardproject.dto.PageRequestDTO;
+import com.example.boardproject.dto.ProductDTO;
 import com.example.boardproject.entity.Board;
+import com.example.boardproject.entity.Product;
 import com.example.boardproject.repository.SearchRepository;
 import com.example.boardproject.service.BoardService;
 import com.example.boardproject.service.SearchService;
@@ -14,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Log4j2
 @Controller
@@ -29,8 +34,13 @@ public class SearchController {
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("productList", searchRepository.productList());
+//        List<Product> products = searchRepository.productList();
+//        model.addAttribute("productList", searchRepository.productList());
 
+//        ProductDTO byPId2 = searchService.getByPId2();
+        //BoardDTO board = showService.getByBId(bId);
+//        model.addAttribute("productList", byPId2);
+        model.addAttribute("productList", searchRepository.productList());
         return "main";
     }
 

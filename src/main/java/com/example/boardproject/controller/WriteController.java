@@ -73,5 +73,6 @@ public class WriteController {
         model.addAttribute("img", result);
         return "layout/defaultForm";
     }
+
 }
 
