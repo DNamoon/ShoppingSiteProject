@@ -2,20 +2,17 @@
     <th:block th:fragment="content">
         <div class="row">
 
-            <div class="col-lg-4" th:each="dto:${productList}">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
-                     xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
-                     preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777"/>
-                    <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-                </svg>
+            <div class="col-lg-4" th:each="dto, i:${productList}">
 
                 <!--                사진보일 곳              -->
-<!--                <div th:each></div>-->
-<!--                <div class="col-md-6" th:each="aa : ${productList.pImageFiles}">-->
-<!--                    <img class="card-img-top mb-5 mb-md-0"-->
-<!--                         th:src="@{/images/{storeFileName} (storeFileName= ${aa.storeFileName})}" alt="..."/>-->
-<!--                </div>-->
+
+                <div class="col-md-6">
+<!--                    <img th:src="@{/images/{storeFileName} (storeFileName= ${dto.pImageFiles.storeFileName})}" alt="..."/>-->
+<!--                        <img th:src="@{'/images/'+${i.count}+'.png'}" alt="..."/>-->
+                         <img th:src="@{'/images/111.png'}" alt="..."/>
+
+                    <!--                    <h1>[[${i.count}]]</h1>-->
+                </div>
 
                 <h2>[[${dto.pName}]]</h2>
                 <p><a class="btn btn-secondary" th:href="@{|/product/${dto.pId}|}">View details &raquo;</a></p>
